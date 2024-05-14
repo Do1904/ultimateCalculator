@@ -75,6 +75,7 @@
                         document.getElementById("html").innerHTML = html;
                         document.getElementById("dots").innerHTML = dots;
                         document.getElementById("ans").innerHTML = number1 + number2;
+                        document.getElementById("trybutton").innerHTML = '<button onclick="tryAgain()">Try Again</button>';
                         clearInterval(intervalId);
                     default:
                         message = '不明なアクションです。';
@@ -86,8 +87,7 @@
         <div id="maintitle">
             <p><span id="html"></span><span id="dots"></span></p>
             <h1 id="ans"></h1>
-            <br>
-            <button onclick="tryAgain()">Try Again</button>
+            <p id="trybutton"></p>
         </div>
         <div class="caliculater">
 
