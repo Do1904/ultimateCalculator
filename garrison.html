@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let number1;
+        let number2;
+        let intervalId;
+        let count = 0;
+
+        window.onload = function () {
+            const query = getQueryParams();
+            number1 = Number(query.number1);
+            number2 = Number(query.number2);
+            start();
+        };
+
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            var dic = {};
+            for (const [key, value] of params.entries()) {
+                dic[key] = value;
+            }
+            console.log(dic);
+            return dic;
+        }
+
+        function tryAgain() {
+            document.getElementById("ans").innerHTML = "I forgot.";
+        }
+
+        function start() {
+            var html = "Processing";
+            var dots = "";
+            // 1秒ごとにカウントを増やすタイマーを設定
+            intervalId = setInterval(function () {
+                count++;
+                switch (count) {
+                    case 1:
+                        dots = "."
+                        document.getElementById("html").innerHTML = html;
+                        document.getElementById("dots").innerHTML = dots;
+                        break;
+                    case 2:
+                        dots = ".."
+                        document.getElementById("html").innerHTML = html;
+                        document.getElementById("dots").innerHTML = dots;
+                        break;
+                    case 3:
+                        dots = "..."
+                        document.getElementById("html").innerHTML = html;
+                        document.getElementById("dots").innerHTML = dots;
+                        break;
+                    case 4:
+                        dots = "...."
+                        document.getElementById("html").innerHTML = html;
+                        document.getElementById("dots").innerHTML = dots;
+                        break;
+                    case 5:
+                        html = 'Almost there';
+                        dots = "...";
+                        document.getElementById("html").innerHTML = html;
+                        document.getElementById("dots").innerHTML = dots;
+                        break;
+                    case 6:
+                        html = "";
+                        dots = "";
+                        document.getElementById("html").innerHTML = html;
+                        document.getElementById("dots").innerHTML = dots;
+                        document.getElementById("ans").innerHTML = number1 + number2;
+                        clearInterval(intervalId);
+                    default:
+                        message = '不明なアクションです。';
+                }
+            }, 1000); // 1000ミリ秒 (1秒) ごとに実行
+        };
+    </script>
+    <div class="wood-pattern">
+        <div id="maintitle">
+            <p><span id="html"></span><span id="dots"></span></p>
+            <h1 id="ans"></h1>
+            <br>
+            <button onclick="tryAgain()">Try Again</button>
+        </div>
+        <div class="caliculater">
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>

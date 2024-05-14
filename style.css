@@ -1,0 +1,106 @@
+
+
+.stripe{
+    /* 垂直方向のストライプ模様 */
+    background: repeating-linear-gradient(
+        0deg,                /* ストライプの角度（0度） */
+        #000000,             /* 最初の色 */
+        #000000 10px,        /* 最初の色の幅 */
+        #351616 10px,        /* 次の色の開始 */
+        #351616 20px         /* 次の色の幅 */
+    );
+    height: 100vh;          /* 全画面表示 */
+    margin: 0;              /* 余白をなくす */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#maintitle{
+    z-index: 2000;
+    position: relative;
+    color: #b0b0b0;
+    width: 70%;
+    padding: 50px;
+    background-color: black;
+    margin:50px auto;
+    text-align: center;
+    border: dotted 2px white;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5); /* 影の設定 */
+}
+
+#myCanvas{
+    background-color: #54d850;
+}
+
+.caliculater{
+    
+    margin: 50px auto;
+    background-color: #1f1616;
+    color: white;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #352421;
+}
+
+.wood-pattern {
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        90deg,
+        #4e342e,
+        #3f2c28 20px,
+        #3e2723 20px,
+        #3e2723 40px
+    );
+    position: relative;
+    overflow: hidden;
+}
+
+.wood-pattern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2) 10px,
+        transparent 10px,
+        transparent 20px
+    );
+    mix-blend-mode: multiply;
+}
+
+.content {
+    position: relative;
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+
+#entrance{
+    color: #b0b0b0;
+    width: 30%;
+    background-color: rgb(79, 67, 67);
+    margin:50px auto;
+    text-align: center;
+    font-size: large;
+    padding: 150px 0;
+    border: solid 2px rgb(0, 0, 0);
+}
+
+input[type="number"]{
+    font-size: 80%;
+}
+
