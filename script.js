@@ -9,5 +9,11 @@ function caliculate() {
     }
 }
 
+function tryAgain() {
+    document.getElementById("ans").innerHTML = "I forgot.";
+}
 
+function back(){
+    window.location.href = "index.html";
+}
 

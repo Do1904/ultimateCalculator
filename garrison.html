@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <script src="script.js"></script>
     <script>
         let number1;
         let number2;
@@ -32,9 +33,6 @@
             return dic;
         }
 
-        function tryAgain() {
-            document.getElementById("ans").innerHTML = "I forgot.";
-        }
 
         function start() {
             var html = "Processing";
@@ -65,17 +63,36 @@
                         break;
                     case 5:
                         html = 'Almost there';
-                        dots = "...";
+                        dots = ".";
                         document.getElementById("html").innerHTML = html;
                         document.getElementById("dots").innerHTML = dots;
                         break;
                     case 6:
+                        html = 'Almost there';
+                        dots = "..";
+                        document.getElementById("html").innerHTML = html;
+                        document.getElementById("dots").innerHTML = dots;
+                        break;
+                    case 7:
+                        html = 'Almost there';
+                        dots = "...";
+                        document.getElementById("html").innerHTML = html;
+                        document.getElementById("dots").innerHTML = dots;
+                        break;
+                    case 8:
+                        html = 'Almost there';
+                        dots = "....";
+                        document.getElementById("html").innerHTML = html;
+                        document.getElementById("dots").innerHTML = dots;
+                        break;
+                    case 9:
                         html = "";
                         dots = "";
                         document.getElementById("html").innerHTML = html;
                         document.getElementById("dots").innerHTML = dots;
                         document.getElementById("ans").innerHTML = number1 + number2;
-                        document.getElementById("trybutton").innerHTML = '<button onclick="tryAgain()">Try Again</button>';
+                        document.getElementById("trybutton").innerHTML = '<button onclick="tryAgain()">Calculate Again</button>';
+                        document.getElementById("back").innerHTML = '<button onclick="back()">Do another math</button>';
                         clearInterval(intervalId);
                     default:
                         message = '不明なアクションです。';
@@ -85,13 +102,16 @@
     </script>
     <div class="wood-pattern">
         <div id="maintitle">
+            <br><br>
             <p><span id="html"></span><span id="dots"></span></p>
-            <h1 id="ans"></h1>
-            <p id="trybutton"></p>
+            <h1 id="ans" style="font-size: 450%;"></h1>
+            <p><span id="trybutton"></span><span id="back"></span></p>
+            <br>
         </div>
         <div class="caliculater">
 
         </div>
+
     </div>
 
 
