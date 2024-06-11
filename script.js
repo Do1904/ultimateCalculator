@@ -40,7 +40,7 @@ function immerweiter(html, dots) {
 
 function gehtweiter(html, dots){
     var num = Math.random();
-    if(num < 0.85){
+    if(num < 0.87){
         immerweiter(html, dots);
     } else {
         giveup();
